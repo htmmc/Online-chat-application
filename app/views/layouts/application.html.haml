@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title Talkweb
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Playfair+Display", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Muli", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "stylesheets/stylesheet.css", :rel => "stylesheet"}/
+    %meta{:charset => "UTF-8"}/
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body
+    = yield
+    %footer
+      .col-lg-2.left-content
+        %ul.list-unstyled
+          %li How it works
+          %li FAQ
+          %li Sign up
+          %li Sign in
+          %li What others say
+      .col-lg-2.left-2-content
+        %ul.list-unstyled
+          %li About Us
+          %li Mission Statement
+          %li Contact us
+          %li Terms and Conditions
+      .col-lg-2.middle-content
+      .col-lg-6.right-content
