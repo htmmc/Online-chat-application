@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get 'about_us' => 'pages#about_us', as: :about_us
   root 'pages#index'
+
+  get 'about_us' => 'pages#about_us', as: :about_us
+  get '/talk' => 'user#talk'
   
   resources :users
 
