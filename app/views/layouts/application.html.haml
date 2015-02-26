@@ -14,11 +14,14 @@
     %footer
       .col-lg-2.left-content
         %ul.list-unstyled
-          %li How it works
-          %li FAQ
+          %li 
+            %a{:href =>"#How it works"} How it works
+          %li 
+            %a{:href =>"#FAQ"} FAQ
           %li=link_to 'Sign up', new_user_registration_path
           %li=link_to 'Sign in', new_user_session_path
-          %li What others say
+          %li 
+            %a{:href =>"#Reviews"} Reviews
       .col-lg-2.left-2-content
         %ul.list-unstyled
           %li= link_to 'About us', about_us_path

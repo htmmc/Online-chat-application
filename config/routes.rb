@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   get 'about_us' => 'pages#about_us', as: :about_us
   get 'mission_statement' => 'pages#mission_statement', as: :mission_statement
   get 'terms_conditions' => 'pages#terms_conditions', as: :terms_conditions
+
  
   get 'contacts' => 'contacts#new'
-  
+
   get '/talk' => 'user#talk'
   
   resources :users

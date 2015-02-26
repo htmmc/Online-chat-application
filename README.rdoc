@@ -1,4 +1,4 @@
-Heroku:
+aHeroku:
 http://myapp.herokuapp.com
 
 How to setup application:
