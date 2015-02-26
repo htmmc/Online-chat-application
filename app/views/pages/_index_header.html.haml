@@ -5,12 +5,21 @@
   .pull-right.header-right
     %ul.nav.navbar-nav.default.pull-right
       %li
-        %a{:href =>"#How it works"} How it works
+        %a{:href =>"/#How it works"} How it works
       %li
-        %a{:href =>"#Reviews"} Reviews
-      %li
-        = link_to "Sign up", new_user_registration_path
-      %li
-        = link_to "Sign in", new_user_session_path
+        %a{:href =>"/#Reviews"} Reviews
+      - if current_user.present?
+        %li
+          = link_to "Sign out", destroy_user_session_path, :method => :delete
+      - else 
+        %li 
+          = link_to "Sign in", new_user_session_path
+        %li
+          =link_to "Sign up", new_user_registration_path
+      %li 
+      - if current_user.present?
+        Logged in as: #{current_user.email}
+        
     .image-container
       %img.avatar{:alt => "photo", :src => ""}/
+
