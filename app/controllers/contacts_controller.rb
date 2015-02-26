@@ -8,9 +8,9 @@ class ContactsController < ApplicationController
 		@contact.request = request
 		#
 		if @contact.deliver
-			flash.now[:notice] ="Thank you for your message! We will get back to you soon!"
+			flash.now[:notice] ="Message successfuly sent."
 		else 
-			flash.now[:error] ="Your email did not go through."
+			flash.now[:error] ="Message failed"
 			render "new"
 		end
 	end 
