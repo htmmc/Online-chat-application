@@ -5,7 +5,6 @@
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", :rel => "stylesheet"}/
     %link{:href => "http://fonts.googleapis.com/css?family=Playfair+Display", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "http://fonts.googleapis.com/css?family=Muli", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "stylesheets/stylesheet.css", :rel => "stylesheet"}/
     %meta{:charset => "UTF-8"}/
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
@@ -22,10 +21,9 @@
           %li What others say
       .col-lg-2.left-2-content
         %ul.list-unstyled
-          %li= link_to 'About Us', about_us_path
+          %li= link_to 'About us', about_us_path
           %li Mission Statement
-          %li Contact us
-            = link_to t('Contact'), new_contact_path
+          %li= link_to t('Contact us'), new_contact_path
           %li Terms and Conditions
       .col-lg-2.middle-content
       .col-lg-6.right-content

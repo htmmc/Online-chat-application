@@ -4,8 +4,9 @@ class ContactsController < ApplicationController
 	end 
 
 	def create
-		@contact = Contact.new
+		@contact = Contact.new(params[:contact])
 		@contact.request = request
+		#
 		if @contact.deliver
 			flash.now[:notice] ="Thank you for your message! We will get back to you soon!"
 		else 

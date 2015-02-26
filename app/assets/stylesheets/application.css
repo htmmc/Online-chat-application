@@ -2704,6 +2704,9 @@ textarea.input-sm,
 select[multiple].input-sm {
   height: auto;
 }
+.form_container{
+  width: 60%;
+}
 .form-group-sm .form-control {
   height: 33px;
   padding: 6px 9px;
