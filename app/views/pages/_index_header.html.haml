@@ -1,0 +1,16 @@
+%header.container-fluid
+  %ul.nav.navbar-nav.default.pull-left
+    %li
+      %a{:href => "#"} How to become a listener
+  .pull-right.header-right
+    %ul.nav.navbar-nav.default.pull-right
+      %li
+        %a{:href => "#"} How it works
+      %li
+        %a{:href => "#"} FAQ
+      %li
+        = link_to "Sign up", new_user_registration_path
+      %li
+        = link_to "Sign in", new_user_session_path
+    .image-container
+      %img.avatar{:alt => "photo", :src => ""}/
