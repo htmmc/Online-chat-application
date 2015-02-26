@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   get 'about_us' => 'pages#about_us', as: :about_us
+  get 'mission_statement' => 'pages#mission_statement', as: :mission_statement
+  get 'contact_us' => 'pages#contact_us', as: :contact_us
+  get 'terms_conditions' => 'pages#terms_conditions', as: :terms_conditions
+ 
   get '/talk' => 'user#talk'
   
   resources :users
