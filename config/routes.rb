@@ -5,12 +5,15 @@ Rails.application.routes.draw do
 
   get 'about_us' => 'pages#about_us', as: :about_us
   get 'mission_statement' => 'pages#mission_statement', as: :mission_statement
-  get 'contact_us' => 'pages#contact_us', as: :contact_us
   get 'terms_conditions' => 'pages#terms_conditions', as: :terms_conditions
  
+  get 'contacts' => 'contacts#new'
+  
   get '/talk' => 'user#talk'
   
   resources :users
+
+  resources "contacts", only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

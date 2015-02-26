@@ -1,0 +1,10 @@
+%div
+  - flash.each do |key, value|
+    %div
+      %a{"data-dismiss" => "alert", :href => "#"} ×
+      = value
+.container{:align => "center"}
+  %h1 Thank you for your message. 
+  %p We will get back to you within 3 business days. 
+
+
