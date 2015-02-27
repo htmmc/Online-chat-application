@@ -1,1 +1,2 @@
-<h1>Session for #{current_user.email}</h1>
+%h1 Session for #{current_user.email}
+%a.btn.btn-primary.btn-lg{:href => destroy_user_session_path, :method => "delete", :role => "button"} Sign out

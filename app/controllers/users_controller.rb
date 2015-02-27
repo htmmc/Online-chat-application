@@ -8,9 +8,9 @@ class UsersController < ApplicationController
 #		else redirect_to new_user_session_path
 #		end 
 #	end 
-#	def show#
-
-#	end 
+	def show
+		redirect_to '/'
+	end 
 	def chat_session
 		# once listner is created, check if listner is available
 
