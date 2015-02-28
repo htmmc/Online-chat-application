@@ -1,0 +1,187 @@
+.page_top_row{:style => "min-height:200px"}
+  .col-sm-6
+    %h1 Need to talk?
+    %h3 Found someone who understand your challenges
+  .col-sm-5.col-sm-offset-1
+    %nav#member_links.navbar.navbar-user{:role => "navigation"}
+      .btn-toolbar
+        .btn-group
+          %a.btn.btn-default{:href => "#"} Dashboard
+          %a.btn.btn-default{:href => "#"} Talk Now
+          %a.btn.btn-default{:href => "#"} Edit Profile
+.search_container.inline-block
+  %form.search_form{:action => "search_listener", :method => "get", :role => "form"}
+    .form-group
+      %label.sr-only{:for => "expertise"} Category
+      %select#expertise.form-control{:name => "expertise", :style => "width:140px"}
+        %option{:value => ""} -- Category --
+        %option{:value => "1"} Blah - Everyday matters
+        %option{:value => "2"} Self Confidence
+        %option{:value => "3"} Relationships
+        %option{:value => "4"} Family Issues
+        %option{:value => "5"} Emotional support
+        %option{:value => "6"} Disability
+        %option{:value => "7"} Eating Disorders
+        %option{:value => "8"} Business
+        %option{:value => "9"} LGBTQ
+        %option{:value => "10"} Substance Abuse
+        %option{:value => "11"} Panic Attacks
+        %option{:value => "12"} Depression
+        %option{:value => "13"} Self-Harm
+        %option{:value => "14"} Sleeping Well
+        %option{:value => "15"} Sex
+        %option{:value => "16"} Traumatic Experiences
+        %option{:value => "17"} Work Stress
+        %option{:value => "18"} Anxiety
+    .form-group
+      %label.search_label{:for => "keyword"} Keyword Search
+      %input#keyword.form-control{:name => "keyword", :placeholder => "Find by Keywords", :style => "width:220px", :type => "search", :value => ""}
+    .form_group
+      %label.search_label{:for => "sortby"} placeholder
+      %select#language.form-control{:name => "language", :width => "100px"}
+        %option{:value => ""} --language--
+        %option{:value => "Afrikaans"} Afrikaans
+        %option{:value => "Akan"} Akan
+        %option{:value => "Albanian"} Albanian
+        %option{:value => "American Sign Language"} American Sign Language
+        %option{:value => "Amharic"} Amharic
+        %option{:value => "Arabic"} Arabic
+        %option{:value => "Armenian"} Armenian
+        %option{:value => "Assamese"} Assamese
+        %option{:value => "Austrailian Sign Language"} Austrailian Sign Language
+        %option{:value => "Awadhi"} Awadhi
+        %option{:value => "Azerbaijani"} Azerbaijani
+        %option{:value => "Balochi"} Balochi
+        %option{:value => "Belarusian"} Belarusian
+        %option{:value => "Bengali"} Bengali
+        %option{:value => "Bhojpuri"} Bhojpuri
+        %option{:value => "Bosnian"} Bosnian
+        %option{:value => "British Sign Language"} British Sign Language
+        %option{:value => "Bulgarian"} Bulgarian
+        %option{:value => "Burmese"} Burmese
+        %option{:value => "Cantonese"} Cantonese
+        %option{:value => "Catalan"} Catalan
+        %option{:value => "Cebuano"} Cebuano
+        %option{:value => "Chewa"} Chewa
+        %option{:value => "Chhattisgarhi"} Chhattisgarhi
+        %option{:value => "Chinese"} Chinese
+        %option{:value => "Chittagonian"} Chittagonian
+        %option{:value => "Croatian"} Croatian
+        %option{:value => "Czech"} Czech
+        %option{:value => "Danish"} Danish
+        %option{:value => "Deccan"} Deccan
+        %option{:value => "Dhundhari"} Dhundhari
+        %option{:value => "Dutch"} Dutch
+        %option{:value => "English"} English
+        %option{:value => "Estonian"} Estonian
+        %option{:value => "Filipino"} Filipino
+        %option{:value => "Finnish"} Finnish
+        %option{:value => "French"} French
+        %option{:value => "Frisian"} Frisian
+        %option{:value => "Fula"} Fula
+        %option{:value => "Gaeilge"} Gaeilge
+        %option{:value => "Gan"} Gan
+        %option{:value => "Georgian"} Georgian
+        %option{:value => "German"} German
+        %option{:value => "Greek"} Greek
+        %option{:value => "Gujarati"} Gujarati
+        %option{:value => "Haitian Creole"} Haitian Creole
+        %option{:value => "Hakka"} Hakka
+        %option{:value => "Haryanvi"} Haryanvi
+        %option{:value => "Hausa"} Hausa
+        %option{:value => "Hebrew"} Hebrew
+        %option{:value => "Hiligaynon"} Hiligaynon
+        %option{:value => "Hindi"} Hindi
+        %option{:value => "Hmong"} Hmong
+        %option{:value => "Hungarian"} Hungarian
+        %option{:value => "Icelandic"} Icelandic
+        %option{:value => "Igbo"} Igbo
+        %option{:value => "Ilokano"} Ilokano
+        %option{:value => "Indonesian"} Indonesian
+        %option{:value => "Irish"} Irish
+        %option{:value => "Italian"} Italian
+        %option{:value => "Japanese"} Japanese
+        %option{:value => "Javanese"} Javanese
+        %option{:value => "Jin"} Jin
+        %option{:value => "Kannada"} Kannada
+        %option{:value => "Kazakh"} Kazakh
+        %option{:value => "Khmer"} Khmer
+        %option{:value => "Kinyarwanda"} Kinyarwanda
+        %option{:value => "Kirundi"} Kirundi
+        %option{:value => "Konkani"} Konkani
+        %option{:value => "Korean"} Korean
+        %option{:value => "Kurdish"} Kurdish
+        %option{:value => "Latin"} Latin
+        %option{:value => "Latvian"} Latvian
+        %option{:value => "Lithuanian"} Lithuanian
+        %option{:value => "Macedonian"} Macedonian
+        %option{:value => "Madurese"} Madurese
+        %option{:value => "Magahi"} Magahi
+        %option{:value => "Maithili"} Maithili
+        %option{:value => "Malagasy"} Malagasy
+        %option{:value => "Malay"} Malay
+        %option{:value => "Malayalam"} Malayalam
+        %option{:value => "Maltese"} Maltese
+        %option{:value => "Mandarin"} Mandarin
+        %option{:value => "Marathi"} Marathi
+        %option{:value => "Marwari"} Marwari
+        %option{:value => "Mauritian Creole"} Mauritian Creole
+        %option{:value => "Min Bei"} Min Bei
+        %option{:value => "Min Dong"} Min Dong
+        %option{:value => "Min Nan"} Min Nan
+        %option{:value => "Mossi"} Mossi
+        %option{:value => "Nepali"} Nepali
+        %option{:value => "Norwegian"} Norwegian
+        %option{:value => "Oriya"} Oriya
+        %option{:value => "Oromo"} Oromo
+        %option{:value => "Pashto"} Pashto
+        %option{:value => "Persian"} Persian
+        %option{:value => "Polish"} Polish
+        %option{:value => "Portuguese"} Portuguese
+        %option{:value => "Punjabi"} Punjabi
+        %option{:value => "Quechua"} Quechua
+        %option{:value => "Romanian"} Romanian
+        %option{:value => "Russian"} Russian
+        %option{:value => "Sanskrit"} Sanskrit
+        %option{:value => "Saraiki"} Saraiki
+        %option{:value => "Serbian"} Serbian
+        %option{:value => "Shona"} Shona
+        %option{:value => "Sindhi"} Sindhi
+        %option{:value => "Sinhalese"} Sinhalese
+        %option{:value => "Slovak"} Slovak
+        %option{:value => "Slovenian"} Slovenian
+        %option{:value => "Somali"} Somali
+        %option{:value => "Spanish"} Spanish
+        %option{:value => "Sundanese"} Sundanese
+        %option{:value => "Swahili"} Swahili
+        %option{:value => "Swedish"} Swedish
+        %option{:value => "Swiss German"} Swiss German
+        %option{:value => "Sylheti"} Sylheti
+        %option{:value => "Tagalog"} Tagalog
+        %option{:value => "Tamil"} Tamil
+        %option{:value => "Telugu"} Telugu
+        %option{:value => "Thai"} Thai
+        %option{:value => "Turkish"} Turkish
+        %option{:value => "Ukrainian"} Ukrainian
+        %option{:value => "Urdu"} Urdu
+        %option{:value => "Uyghur"} Uyghur
+        %option{:value => "Uzbek"} Uzbek
+        %option{:value => "Vietnamese"} Vietnamese
+        %option{:value => "Welsh"} Welsh
+        %option{:value => "Wu"} Wu
+        %option{:value => "Xhosa"} Xhosa
+        %option{:value => "Xiang"} Xiang
+        %option{:value => "Yoruba"} Yoruba
+        %option{:value => "Zhuang"} Zhuang
+        %option{:value => "Zulu"} Zulu
+.listner_search_result
+  .container_listener.list-group
+    - if @listeners.any?
+      %ul.col-sm-3.listner_summary.list-group-item
+        - @listeners.each do |l| 
+          %li name: #{l.name}
+          %li language:  #{l.language}
+          %li age group: #{l.agegroup}
+          %li category: #{l.categories}
+          %li license: #{l.license_type}
+          %button.btn.btn-primary.btn-xs{:href => chat_session_user_path, :type => "button"} Start a Conversation

@@ -11,18 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225191438) do
+ActiveRecord::Schema.define(version: 20150227214602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "listeners", force: :cascade do |t|
+    t.string   "name",              null: false
+    t.string   "username",          null: false
+    t.string   "email",             null: false
+    t.string   "password",          null: false
+    t.date     "birthday",          null: false
+    t.boolean  "license"
+    t.string   "license_type"
+    t.boolean  "registration"
+    t.string   "registration_type"
+    t.string   "age_group"
+    t.string   "religion"
+    t.text     "description"
+    t.binary   "photo"
+    t.boolean  "agreement",         null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                       default: "", null: false
+    t.string   "encrypted_password",          default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",               default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -33,6 +52,23 @@ ActiveRecord::Schema.define(version: 20150225191438) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "birthday"
+    t.string   "name"
+    t.string   "agegroup"
+    t.boolean  "license"
+    t.string   "license_type"
+    t.boolean  "registration"
+    t.string   "registration_type"
+    t.string   "religion"
+    t.string   "specialty"
+    t.string   "categories"
+    t.text     "description"
+    t.datetime "beginning_of_available_time"
+    t.datetime "end_of_available_time"
+    t.string   "username"
+    t.string   "language"
+    t.boolean  "term_agreement"
+    t.boolean  "listener"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

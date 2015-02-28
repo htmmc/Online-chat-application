@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
-  def index
+  def listener_search
+  	@listeners = User.where(listener: 'true').limit(12)
+
   end
+
 end

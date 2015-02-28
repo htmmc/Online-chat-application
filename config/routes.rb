@@ -7,14 +7,13 @@ Rails.application.routes.draw do
   get 'about_us' => 'pages#about_us', as: :about_us
   get 'mission_statement' => 'pages#mission_statement', as: :mission_statement
   get 'terms_conditions' => 'pages#terms_conditions', as: :terms_conditions
-  get 'listner_search' => 'pages#listner_search', as: :listner_search
-
-  get 'users/chat_session' => 'users#chat_session', as: :chat_session_user
- 
+  get 'listener_search' => 'pages#listener_search', as: :listener_search
+   
   get 'contacts' => 'contacts#new'
   
   resources :users
 
+  get 'users/chat_session' => 'users#chat_session', as: :chat_session_user 
   resources "contacts", only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.

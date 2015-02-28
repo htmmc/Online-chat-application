@@ -10,9 +10,9 @@ class UsersController < ApplicationController
 #	end 
 	def show
 		redirect_to '/'
+
 	end 
 	def chat_session
-		# once listner is created, check if listner is available
 
 	end 
 
