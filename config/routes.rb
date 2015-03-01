@@ -11,9 +11,8 @@ Rails.application.routes.draw do
    
   get 'contacts' => 'contacts#new'
   
-  resources :users
-
   get 'users/chat_session' => 'users#chat_session', as: :chat_session_user 
+  resources :users
   resources "contacts", only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.

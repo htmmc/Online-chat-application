@@ -1,2 +1,5 @@
-%h1 Session for #{current_user.email}
-%a.btn.btn-primary.btn-lg{:href => destroy_user_session_path, :method => "delete", :role => "button"} Sign out
+= render :partial => "userpage_header"
+%h2 User page
+%p You are currently speaking with: 
+%a.btn.btn-primary.btn-sm{:href => destroy_user_session_path, :method => "delete", :role => "button"} Report Abuse
+%a.btn.btn-primary.btn-sm{:href => destroy_user_session_path, :method => "delete", :role => "button"} End Session 

@@ -1,14 +1,15 @@
-.page_top_row{:style => "min-height:200px"}
+.page_top_row{:style => "min-height:100px"}
   .col-sm-6
     %h1 Need to talk?
-    %h3 Found someone who understand your challenges
   .col-sm-5.col-sm-offset-1
     %nav#member_links.navbar.navbar-user{:role => "navigation"}
       .btn-toolbar
         .btn-group
-          %a.btn.btn-default{:href => "#"} Dashboard
+          %a.btn.btn-default{:href => "users/#{current_user.id}"} Dashboard
           %a.btn.btn-default{:href => "#"} Talk Now
-          %a.btn.btn-default{:href => "#"} Edit Profile
+          %a.btn.btn-default{:href => "#"} Home
+.page_top_row_two
+  %h3 Find someone who understand your challenges
 .search_container.inline-block
   %form.search_form{:action => "search_listener", :method => "get", :role => "form"}
     .form-group
@@ -177,11 +178,14 @@
 .listner_search_result
   .container_listener.list-group
     - if @listeners.any?
-      %ul.col-sm-3.listner_summary.list-group-item
-        - @listeners.each do |l| 
+      - @listeners.each do |l| 
+        %ul.col-sm-3.listner_summary.list-group-item
           %li name: #{l.name}
           %li language:  #{l.language}
           %li age group: #{l.agegroup}
           %li category: #{l.categories}
           %li license: #{l.license_type}
-          %button.btn.btn-primary.btn-xs{:href => chat_session_user_path, :type => "button"} Start a Conversation
+          %li religion: #{l.religion}
+          %a.btn.btn-primary.btn-xs{:href => "/users/chat_session", :type => "button", :data => l.id } Start a Conversation
+          %a.btn.btn-primary.btn-xs{:href => "users/#{l.id}", :type => "button", :data => l.id, } Detail
+          

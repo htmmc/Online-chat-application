@@ -1,7 +1,22 @@
 = render :partial => "userpage_header"
-%h1 User page
-%p This is the page for each user
-%a.btn.btn-primary.btn-lg{:href => "#", :role => "button"} Talk Now
+%h2 #{@listener.username}'s Profile Page
 
+.row.profile_picture
+  .col-xs-6.col-md-3
+    .thumbnail
+      %img{:src =>'http://www.clker.com/cliparts/5/7/4/8/13099629981030824019profile.svg.thumb.png', :alt =>"profile photo"}
+        .caption
+          %h4 #{@listener.username}
+          %p License: #{@listener.license_type}
+          %p Religion: #{@listener.religion}
+          %p Language: #{@listener.language}
+          %p Age Group: #{@listener.agegroup}
+          %p  
+            %a.btn.btn-primary{:href => "#", :role => "button"} Talk Now
+  .col-xs-6.col-md-9
+    .description_listener
+      %h3 Introduction: 
+      %p My name is #{@listener.name}. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-
+- if @listener.id == current_user.id 
+  %a.btn.btn-primary.btn{:href => "users/#{current_user.id}/edit", :method => "get", :role => "button"} Edit my page 

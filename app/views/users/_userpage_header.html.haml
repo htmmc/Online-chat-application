@@ -3,15 +3,14 @@
     %li logo
   .pull-right.header-right
     %ul.nav.navbar-nav.default.pull-right
-      %li 
-      - if current_user.present?
-        Logged in as: #{current_user.username}
       - if current_user.present?
         %li
           = link_to "Sign out", destroy_user_session_path, :method => :delete
+        %li Logged in as: #{current_user.username}  
+        %li.img.avatar{:alt => "avatar", :src => ""}/
       - else 
         %li 
           = link_to "Sign in", new_user_session_path
         %li
           =link_to "Sign up", new_user_registration_path       
-      %li.img.avatar{:alt => "photo", :src => ""}/
+      
