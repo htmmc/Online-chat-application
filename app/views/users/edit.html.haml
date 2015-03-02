@@ -1,68 +1,45 @@
 = render :partial => "userpage_header"
 %h2 Edit Contact information for: #{@current_user.username}
-= form_for [@] do |f|
-  %br/
-  = f.label :street
-  = f.text_field :street
-  %br/
-  = f.label :city
-  = f.text_field :city
-  %br/
-  = f.label :state
-  = f.text_field :state
-  %br/
-  = f.label :zipcode
-  = f.text_field :zipcode
-  %br/
-  = f.label :phone
-  = f.text_field :phone
-  %br/
-  = f.label :email
-  = f.email_field :email
-  %br/
-  = f.submit 'Save'
-%br/
-= button_to "Delete", contact_path, :method => :delete, :class => "delete", :data => {confirm: "Are you sure to delete this person's contact information?"}
-%br/
-= link_to("Cancel", contact_infos_path)
+- if @errors.present?
+  %ul
+    - @errors.each do |msg|
+      %li= msg
 
+=form_for current_user do |f|
+  .row.profile_picture
+    .col-xs-6.col-md-3
+      .thumbnail
+        %img{:src =>'http://www.clker.com/cliparts/5/7/4/8/13099629981030824019profile.svg.thumb.png', :alt =>"profile photo"}
+          .caption
+            = f.label :username
+            = f.text_field :username
+            %br/
+            = f.label :license_type 
+            = f.text_field :license_type
+            %br/
+            = f.label :religion 
+            = f.text_field :religion
+            %br/  
+            = f.label :language 
+            = f.text_field :language
+            %br/  
+            = f.label :agegroup 
+            = f.text_field :agegroup 
+            %br
+            =f.label :description
+            =f.text_area :description 
+            %br/
+            = f.label :specialty
+            = f.text_field :specialty
+            %br
+            = f.label :categories
+            = f.text_field :categories
+            %br
+            = f.submit 'Save'
+//Add autocomplete in the future 
+      
+%h3 Cancel my account
+%p
+  Unhappy? #{button_to "Cancel my account", destroy_user_session_path, data: { confirm: "Are you sure?" }, method: :delete}
+= link_to "Back", :back
 
-.row.profile_picture
-  .col-xs-6.col-md-3
-    .thumbnail
-      %img{:src =>'http://www.clker.com/cliparts/5/7/4/8/13099629981030824019profile.svg.thumb.png', :alt =>"profile photo"}
-        .caption
-          %h4 #{@listener.username}
-          %p License: #{@listener.license_type}
-          %p Religion: #{@listener.religion}
-          %p Language: #{@listener.language}
-          %p Age Group: #{@listener.agegroup}
-          %p  
-            %a.btn.btn-primary{:href => "#", :role => "button"} Talk Now
-  .col-xs-6.col-md-9
-    .description_listener
-      %h3 Introduction: 
-      %p My name is #{@listener.name}. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-- if @listener.id == current_user.id 
-  %a.btn.btn-primary.btn{:href => "users/#{current_user.id}/edit", :method => "get", :role => "button"} Edit my page 
-
-    add_column :users, :birthday, :date
-	add_column :users, :name, :string
-	add_column :users, :agegroup, :string
-	add_column :users, :license, :boolean
-	add_column :users, :license_type, :string
-	add_column :users, :registration, :boolean
-	add_column :users, :registration_type, :string
-	add_column :users, :religion, :string
-	add_column :users, :specialty, :string
-	add_column :users, :categories, :string 
-	add_column :users, :description, :text
-	add_column :users, :beginning_of_available_time, :datetime
-	add_column :users, :end_of_available_time, :datetime
-  	add_column :users, :username, :string
-  	add_column :users, :language, :string
-  	add_column :users, :term_agreement, :boolean
-  	add_column :users, :listener, :boolean
-
-  

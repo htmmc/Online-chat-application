@@ -1,0 +1,48 @@
+%h2 Hope you had a wonderful talk! 
+%h4 How was the session? 
+%i To improve the quality of our service, your feedback is very important to us.  
+
+%form.form-horizontal
+  %fieldset
+    %legend #{current_user.username}'s session with Listener's name 
+    .form-group
+      %label.col-lg-2.control-label{:for => "select"} How helpful was your Listener?
+      .col-lg-10
+        %select#select.form-control
+          %option Very helpful
+          %option Helpful
+          %option Neutral
+          %option Not so helpful
+          %option Not helpful at all
+        %br/
+    .form-group
+      %label.col-lg-2.control-label Are you seeing a professional for your concerns? 
+      .col-lg-10
+        .radio
+          %label
+            %input#optionsRadios1{:checked => "checked", :name => "optionsRadios", :type => "radio", :value => "option1"}/
+            YES
+        .radio
+          %label
+            %input#optionsRadios2{:name => "optionsRadios", :type => "radio", :value => "option2"}/
+            NO 
+    .form-group
+      %label.col-lg-2.control-label{:for => "select"} What subjects are you interested in talking with our Listener? (choose multiple)
+      .col-lg-10
+        %select.form-control{:multiple => "multiple"}
+          %option Relationships
+          %option Financial issues
+          %option Self-image
+          %option Worries for future
+          %option Health  
+          %option Career           
+    .form-group
+      %label.col-lg-2.control-label{:for => "textArea"} Please leave any feedback here. 
+      .col-lg-10
+        %textarea#textArea.form-control{:rows => "3"}
+        %span.help-block Your feedback can be written only in English or Spanish. We might not be able to respond to feedback written in other languages. 
+    .form-group
+      .col-lg-10.col-lg-offset-2
+        %button.btn.btn-default{:type => "reset"} Cancel
+        %button.btn.btn-primary{:type => "submit", :href =>listener_search_path,:method => :post} Submit
+//Will store the time of the session, feedback, the listener id, subject. 

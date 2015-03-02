@@ -4,15 +4,22 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   get 'talk' => 'pages#talk', as: :talk
+  get 'listen' => 'pages#listen', as: :listen
   get 'about_us' => 'pages#about_us', as: :about_us
   get 'mission_statement' => 'pages#mission_statement', as: :mission_statement
   get 'terms_conditions' => 'pages#terms_conditions', as: :terms_conditions
   get 'listener_search' => 'pages#listener_search', as: :listener_search
    
+  get  'listeners/sign_up' => 'devise/registrations#new_client', :as => 'new_listener_registration'
+  post 'listeners/sign_up' => 'devise/registrations#create', :as => 'listener_registration'
+
   get 'contacts' => 'contacts#new'
   
-  get 'users/chat_session' => 'users#chat_session', as: :chat_session_user 
-  resources :users
+  get 'users/chat_session' => 'users#chat_session', as: :chat_session_user
+  get 'users/feedback_user' =>'users#feedback_user', as: :feedback_user
+  get 'users/feedback_listener' => 'users#feedback_listener', as: :feedback_listener
+  
+  resources :users 
   resources "contacts", only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
