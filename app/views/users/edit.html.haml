@@ -14,26 +14,32 @@
             = f.label :username
             = f.text_field :username
             %br/
-            = f.label :license_type 
-            = f.text_field :license_type
-            %br/
-            = f.label :religion 
-            = f.text_field :religion
-            %br/  
+            = f.label :listener
+            = f.label :listener, 'Yes', :value => true 
+            = f.radio_button :listener, true 
+            = f.label :listener, 'No', :value => false 
+            = f.radio_button :listener, false
+            %br/         
             = f.label :language 
             = f.text_field :language
             %br/  
             = f.label :agegroup 
             = f.text_field :agegroup 
-            %br
+            %br/
+            = f.label :categories
+            = f.text_field :categories
+            %br 
+            = f.label :religion 
+            = f.text_field :religion
+            %br/
+            = f.label :license_type 
+            = f.text_field :license_type
+            %br/
             =f.label :description
             =f.text_area :description 
             %br/
             = f.label :specialty
             = f.text_field :specialty
-            %br
-            = f.label :categories
-            = f.text_field :categories
             %br
             = f.submit 'Save'
 //Add autocomplete in the future 

@@ -2,20 +2,22 @@
 .main-container
   .jumbotron
     %h1 I want to
-    %a.btn.btn-primary.btn-lg{:href => "/listen", :role => "button"} Listen
-    %a.btn.btn-primary.btn-lg{:href => "/talk", :role => "button"} Talk
+    %a.btn.btn-primary.btn-lg{:href => "/listen", :role => "button"} Listen to someone
+    %a.btn.btn-primary.btn-lg{:href => "/talk", :role => "button"} Talk to someone
   #page1
     %a{:id => "How it works"}
     %h2 How it works
     %p Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque. In eget sapien sed, sit duis vestibulum ultricies, placerat morbi amet vel, nullam in in lorem vel. In molestie elit dui dictum, praesent nascetur pulvinar sed, in dolor pede in aliquam, risus nec error quis pharetra. Eros metus quam augue suspendisse, metus rutrum risus erat in.  In ultrices quo ut lectus, etiam vestibulum urna a est, pretium luct
-    %button.btn.btn-primary{:type => "button"} Start a Conversation
+    %a.btn.btn-primary.btn{:type => "button"} Start a Conversation
   #page2
     %a{:id => "How to become a listener"}
-    %h2 How to become a listener
-    %p Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque. In eget sapien sed, sit duis vestibulum ultricies, placerat morbi amet vel, nullam in in lorem vel. In molestie elit dui dictum, praesent nascetur pulvinar sed, in dolor pede in aliquam, risus nec error quis pharetra. Eros metus quam augue suspendisse, metus rutrum risus erat in.  In ultrices quo ut lectus, etiam vestibulum urna a est, pretium luct
-    %button.btn.btn-info{:type => "button"} Become a Listener
-    %a{:id => "Power of Listening"}
+      .jumbotron.page2
+        .page2_text
+          %h2 How to become a listener
+          %p Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque. In eget sapien sed, sit duis vestibulum ultricies, placerat morbi amet vel, nullam in in lorem vel. In molestie elit dui dictum, praesent nascetur pulvinar sed, in dolor pede in aliquam, risus nec error quis pharetra. Eros metus quam augue suspendisse, metus rutrum risus erat in.  In ultrices quo ut lectus, etiam vestibulum urna a est, pretium luct
+          %a.btn.btn-primary.btn{:href => new_user_registration_path, :type => "button"} Become a Listener
   #page3
+    %a{:id => "Power of Listening"}
     %h2 Power of Listening
     %p Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque. In eget sapien sed, sit duis vestibulum ultricies, placerat morbi amet vel, nullam in in lorem vel. In molestie elit dui dictum, praesent nascetur pulvinar sed, in dolor pede in aliquam, risus nec error quis pharetra. Eros metus quam augue suspendisse, metus rutrum risus erat in.  In ultrices quo ut lectus, etiam vestibulum urna a est, pretium luct
     %button.btn.btn-primary{:type => "button"} Start a Conversation

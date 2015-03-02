@@ -9,11 +9,11 @@ class UsersController < ApplicationController
 #		end 
 #	end
 	def chat_session
-		render 'chat_session'
-	end  
 
+	end
 	def show
 		@listener = User.find_by(id: params[:id])
+		@user = User.find_by(id: params[:id])
 	end 
 
 	def edit
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 	      flash[:error]  = "Oops! We couldn't update the information, please review the errors"
 	      render 'edit'
 	    end
-  	end
+  	end  
 
   	def feedback_user
 # add criteria later

@@ -13,11 +13,8 @@ class User < ActiveRecord::Base
  
   protected
 
-    #def confirmation_required?
-    #  false
-    #end
-    #Test to see if this will skip the confirmation process for now
 
+    #Test to see if this will skip the confirmation process for now
     def skip_confirmation!
       self.confirmed_at = Time.now
     end

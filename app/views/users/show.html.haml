@@ -1,23 +1,38 @@
 = render :partial => "userpage_header"
 %h2 #{@listener.username}'s Profile Page
+- if @listener.listener == true
+  .row.profile_picture
+    .col-xs-6.col-md-3
+      .thumbnail
+        %img{:src =>'http://www.clker.com/cliparts/5/7/4/8/13099629981030824019profile.svg.thumb.png', :alt =>"profile photo"}
+          .caption
+            %h4 #{@listener.username}
+            %p License: #{@listener.license_type}
+            %p Religion: #{@listener.religion}
+            %p Language: #{@listener.language}
+            %p Age Group: #{@listener.agegroup}
+            %p  
+              %a.btn.btn-primary{:href => "chat_sessions", :role => "button"} Talk Now
+    .col-xs-6.col-md-9
+      .description_listener
+        %h3 Introduction: 
+        %p #{@listener.description}
+  - if @listener.id == current_user.id 
+    %a.btn.btn-primary.btn{:href => "#{current_user.id}/edit", :method => "get", :role => "button"} Edit my page 
+- else 
+  .row.profile_picture
+    .col-xs-6.col-md-3
+      .thumbnail
+        %img{:src =>'http://www.clker.com/cliparts/5/7/4/8/13099629981030824019profile.svg.thumb.png', :alt =>"profile photo"}
+          .caption
+            %h4 #{@user.username}
+            %p Language: #{@user.language}
+            %p Age Group: #{@user.agegroup}
 
-.row.profile_picture
-  .col-xs-6.col-md-3
-    .thumbnail
-      %img{:src =>'http://www.clker.com/cliparts/5/7/4/8/13099629981030824019profile.svg.thumb.png', :alt =>"profile photo"}
-        .caption
-          %h4 #{@listener.username}
-          %p License: #{@listener.license_type}
-          %p Religion: #{@listener.religion}
-          %p Language: #{@listener.language}
-          %p Age Group: #{@listener.agegroup}
-          %p  
-            %a.btn.btn-primary{:href => "chat_sessions", :role => "button"} Talk Now
-  .col-xs-6.col-md-9
-    .description_listener
-      %h3 Introduction: 
-      %p #{@listener.description}
-
-- if @listener.id == current_user.id 
-  %a.btn.btn-primary.btn{:href => "#{current_user.id}/edit", :method => "get", :role => "button"} Edit my page 
-
+    .col-xs-6.col-md-9
+      .description_listener
+        %h3 Looking for someone who can help me: 
+        %p #{@user.description}
+        %p  
+        - if @listener.id == current_user.id 
+          %a.btn.btn-primary.btn{:href => "#{current_user.id}/edit", :method => "get", :role => "button"} Become a listener 

@@ -4858,7 +4858,8 @@ a.badge:focus {
   margin-bottom: 30px;
   color: inherit;
   background-image:url(https://ununsplash.imgix.net/photo-1414604582943-2fd913b3cb17?q=75&fm=jpg&s=f446e822ccd1b4608242cad57d747769);
-  height: 500px;
+  width: 100%;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -6835,6 +6836,7 @@ a.list-group-item-danger.active:focus {
 }
 
 /*my styles are below*/
+
 .jumbotron.mission_statement{
   padding: 30px 15px;
   margin-bottom: 30px;
@@ -6844,4 +6846,72 @@ a.list-group-item-danger.active:focus {
   height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.navbar.navbar-default{
+  margin-bottom:0;
+}
+.jumbotron h1{
+  margin-top:150px;
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+.jumbotron{
+  text-align: center;
+}
+.jumbotron a.btn.btn-primary.btn-lg{
+  margin: 20px;
+}
+.jumbotron.page2{
+  padding: 30px 15px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-image: url(https://unsplash.imgix.net/photo-1423480324944-3bfd580706e1?q=75&fm=jpg&s=51612703ba2082b4bcb34c4f1cced04f);
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#page1,
+#page2,
+#page3,
+#page4,
+#page5{
+  height:100vh;
+  width:100%;
+}
+#page2 h2{
+  color:white;
+  margin-top:100px;
+}
+#page2 p{
+  color:#fff;
+  width:70%;
+  margin:70px auto;
+  text-align: center;
+}
+
+#page1 h2,
+#page3 h2,
+#page4 h2,
+#page5 h2{
+  margin-top: 100px
+}
+#page1 h2 p,
+#page3 h2 p,
+#page4 h2 p,
+#page5 h2 p{
+  margin-top: 50px;
+  text-align: center;
+}
+#page1 h2, p, a.btn.btn-primary.btn{
+  text-align: center;
+}
+footer {
+  background-color: #ecf0f1;
+  height:200px;
+  position-bottom:0;
+  bottom:0;
+  left: 0;
+  right: 0;
 }

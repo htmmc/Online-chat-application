@@ -5,9 +5,16 @@
     %nav#member_links.navbar.navbar-user{:role => "navigation"}
       .btn-toolbar
         .btn-group
-          %a.btn.btn-default{:href => "users/#{current_user.id}"} Dashboard
-          %a.btn.btn-default{:href => "#"} Talk Now
-          %a.btn.btn-default{:href => "#"} Home
+          - if current_user.present? 
+            %a.btn.btn-default{:href => "users/#{current_user.id}"} Dashboard
+            %a.btn.btn-default{:href => chat_session_user_path} Talk Now
+            %a.btn.btn-default{:href => "/"} Home
+          - else 
+            %a.btn.btn-default{:href => "/"} Home
+            %a.btn.btn-default{:href => chat_session_user_path} Talk Now
+            %a.btn.btn-default{:href => new_user_registration_path} Sign up 
+            %a.btn.btn-default{:href => new_user_session_path} Sign in
+
 .page_top_row_two
   %h3 Find someone who understand your challenges
 .search_container.inline-block

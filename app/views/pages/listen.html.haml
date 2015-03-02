@@ -2,8 +2,8 @@
 .main-container
   .jumbotron
     %h1 I want to help others by listening to
-    %a.btn.btn-primary.btn{:href => chat_session_user_path, :role => "button"} anyone who is online now
-    %a.btn.btn-primary.btn{:href => "listener_search", :role => "button"} someone with a particular subject in mind
-    %a.btn.btn-primary.btn{:href => "listener_search", :role => "button"} someone later
+    .row.buttons
+      %a.btn.btn-primary.btn{:href => chat_session_user_path, :role => "button"} anyone who is online now
+      %a.btn.btn-primary.btn{:href => new_user_registration_path, :role => "button"} someone with a particular subject in mind
 
 = render :partial => "footer"
