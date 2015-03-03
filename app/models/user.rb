@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
         :validatable,
         :confirmable
 
-	scope :public_fields, -> { select(:name, :agegroup, :license_type, :registration_type, :description, :religion, :specialty, :categories, :description, :beginning_of_available_time, :end_of_available_time) }        
+	scope :public_fields, -> { select(:name, :username, :agegroup, :license_type, :registration_type, :description, :religion, :specialty, :categories, :description, :beginning_of_available_time, :end_of_available_time) }        
  
   protected
 
@@ -22,6 +22,4 @@ class User < ActiveRecord::Base
     def confirmation_required?
       false
     end
-
-
 end

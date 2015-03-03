@@ -1,5 +1,6 @@
+
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {registrations: 'registrations'}
 
   root 'pages#index'
 
@@ -12,7 +13,8 @@ Rails.application.routes.draw do
   
   get 'contacts' => 'contacts#new'
   
-  get 'users/chat_session' => 'users#chat_session', as: :chat_session_user
+  get 'users/chat_session/user' => 'users#chat_session_user', as: :chat_session_user
+  get 'users/chat_session/listener' => 'users#chat_session_listener', as: :chat_session_listener
   get 'users/feedback_user' =>'users#feedback_user', as: :feedback_user
   get 'users/feedback_listener' => 'users#feedback_listener', as: :feedback_listener
   

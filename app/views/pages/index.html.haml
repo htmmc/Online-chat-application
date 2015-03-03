@@ -1,9 +1,10 @@
 = render :partial => "index_header"
 .main-container
   .jumbotron
-    %h1 I want to
-    %a.btn.btn-primary.btn-lg{:href => "/listen", :role => "button"} Listen to someone
-    %a.btn.btn-primary.btn-lg{:href => "/talk", :role => "button"} Talk to someone
+    .main_text
+      %h1 I want to
+      %a.btn.btn-primary.btn-lg{:href => "/listen", :role => "button"} Listen to someone
+      %a.btn.btn-primary.btn-lg{:href => "/talk", :role => "button"} Talk to someone
   #page1
     %a{:id => "How it works"}
     %h2 How it works

@@ -8,11 +8,13 @@ class UsersController < ApplicationController
 #		else redirect_to new_user_session_path
 #		end 
 #	end
-	def chat_session
-
+	def chat_session_listener
+		#redirect to a chatting page
 	end
+	def chat_session_user
+		#redirect to a chatting page
+	end 
 	def show
-		@listener = User.find_by(id: params[:id])
 		@user = User.find_by(id: params[:id])
 	end 
 

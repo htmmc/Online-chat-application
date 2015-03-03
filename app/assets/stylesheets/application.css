@@ -6850,17 +6850,21 @@ a.list-group-item-danger.active:focus {
 .navbar.navbar-default{
   margin-bottom:0;
 }
-.jumbotron h1{
-  margin-top:150px;
-  margin-bottom: 20px;
-  text-align: center;
 
+.jumbotron.main_text{
+  margin: 20px;
+  position:relative;
+  top:40%;
+}
+.jumbotron h1 {
+  margin-top:20px;
+  margin-bottom: 20px;
+  position: relative;
+  top:30%;
+  text-align: center;
 }
 .jumbotron{
   text-align: center;
-}
-.jumbotron a.btn.btn-primary.btn-lg{
-  margin: 20px;
 }
 .jumbotron.page2{
   padding: 30px 15px;
