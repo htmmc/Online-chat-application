@@ -1,19 +1,4 @@
-.page_top_row{:style => "min-height:100px"}
-  .col-sm-6
-    %h1 Need to talk?
-  .col-sm-5.col-sm-offset-1
-    %nav#member_links.navbar.navbar-user{:role => "navigation"}
-      .btn-toolbar
-        .btn-group
-          - if current_user.present? 
-            %a.btn.btn-default{:href => "users/#{current_user.id}"} Dashboard
-            %a.btn.btn-default{:href => chat_session_user_path} Talk Now
-            %a.btn.btn-default{:href => "/"} Home
-          - else 
-            %a.btn.btn-default{:href => "/"} Home
-            %a.btn.btn-default{:href => chat_session_user_path} Talk Now
-            %a.btn.btn-default{:href => new_user_registration_path} Sign up 
-            %a.btn.btn-default{:href => new_user_session_path} Sign in
+= render :partial => "index_header"
 
 .page_top_row_two
   %h3 Find someone who understand your challenges
@@ -24,7 +9,7 @@
       %select#expertise.form-control{:name => "expertise", :style => "width:140px"}
         %option{:value => ""} -- Category --
         %option{:value => "1"} Blah - Everyday matters
-        %option{:value => "2"} Self Confidence
+        %option{:value => "2"} Life in general
         %option{:value => "3"} Relationships
         %option{:value => "4"} Family Issues
         %option{:value => "5"} Emotional support
@@ -36,11 +21,12 @@
         %option{:value => "11"} Panic Attacks
         %option{:value => "12"} Depression
         %option{:value => "13"} Self-Harm
-        %option{:value => "14"} Sleeping Well
+        %option{:value => "14"} Health and Wellness
         %option{:value => "15"} Sex
         %option{:value => "16"} Traumatic Experiences
         %option{:value => "17"} Work Stress
         %option{:value => "18"} Anxiety
+        %option{:value => "19"} Feeling Lost
     .form-group
       %label.search_label{:for => "keyword"} Keyword Search
       %input#keyword.form-control{:name => "keyword", :placeholder => "Find by Keywords", :style => "width:220px", :type => "search", :value => ""}
@@ -182,6 +168,7 @@
         %option{:value => "Yoruba"} Yoruba
         %option{:value => "Zhuang"} Zhuang
         %option{:value => "Zulu"} Zulu
+
 .listner_search_result
   .container_listener.list-group
     - if @listeners.any?
@@ -193,6 +180,6 @@
           %li category: #{l.categories}
           %li license: #{l.license_type}
           %li religion: #{l.religion}
-          %a.btn.btn-primary.btn-xs{:href => "/users/chat_session", :type => "button", :data => l.id } Start a Conversation
+          %a.btn.btn-primary.btn-xs{:href => "/users/chat_session/user/#{l.id}", :type => "button", :data => l.id } Start a Conversation
           %a.btn.btn-primary.btn-xs{:href => "users/#{l.id}", :type => "button", :data => l.id, } Detail
           

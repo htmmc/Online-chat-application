@@ -1,4 +1,3 @@
-
 Rails.application.routes.draw do
   devise_for :users, :controllers => {registrations: 'registrations'}
 
@@ -13,10 +12,11 @@ Rails.application.routes.draw do
   
   get 'contacts' => 'contacts#new'
   
-  get 'users/chat_session/user' => 'users#chat_session_user', as: :chat_session_user
-  get 'users/chat_session/listener' => 'users#chat_session_listener', as: :chat_session_listener
+  get 'users/chat_session(/:id)' => 'users#chat_session', as: :chat_session
   get 'users/feedback_user' =>'users#feedback_user', as: :feedback_user
   get 'users/feedback_listener' => 'users#feedback_listener', as: :feedback_listener
+  get 'users/report_abuse_listener' =>'users#report_abuse_listener', as: :report_abuse_listener
+  get 'users/report_abuse_user' => 'users#report_abuse_user', as: :report_abuse_user
   
   resources :users
   resources "contacts", only: [:new, :create]

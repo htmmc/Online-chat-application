@@ -8,12 +8,18 @@ class UsersController < ApplicationController
 #		else redirect_to new_user_session_path
 #		end 
 #	end
-	def chat_session_listener
-		#redirect to a chatting page
-	end
-	def chat_session_user
-		#redirect to a chatting page
+	def chat_session
+		#/user/chat_session/4
+		#/user/chat_session
+		#redirect to a chatting page for user to connect to listener
+		if request.path == "/users/chat_session"
+			@listener = User.where("listener = true").order("RANDOM()").first
+			redirect_to chat_session_path(@listener)
+		else
+			@listener = User.find_by(id: params[:id])
+		end
 	end 
+
 	def show
 		@user = User.find_by(id: params[:id])
 	end 
@@ -47,7 +53,7 @@ class UsersController < ApplicationController
 		end
 	end 
 	def user_params
-		params.require(:user).permit(:username, :license_type, :religion, :language, :agegroup, :description, :specialty, :categories)
+		params.require(:user).permit(:username, :license_type, :religion, :language, :agegroup, :description, :specialty, :categories, :listener)
 	end 
 #	def send_confirmation_email
 #		will set up later

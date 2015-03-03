@@ -1,0 +1,50 @@
+= render :partial => "pages/index_header"
+%h2 I am sorry that you have encountered some trouble. 
+%h4 Please report about the session. 
+%i To improve the quality of our service, your feedback is very important to us.  
+
+%form.form-horizontal
+  %fieldset
+    %legend #{current_user.username}'s session with Speaker's name 
+    .form-group
+      %label.col-lg-2.control-label{:for => "select"} Please select the best option to describe the situation.
+      .col-lg-10
+        %select#select.form-control
+          %option Use of derogatory language
+          %option Use of violent terms & threats
+          %option User requires immediate medical attention
+          %option Inappropriate sexual remarks
+          %option Other (Please describe in comment box)
+        %br/
+    .form-group
+      %label.col-lg-2.control-label Was the user female or male? 
+      .col-lg-10
+        .radio
+          %label
+            %input#optionsRadios1{:checked => "checked", :name => "optionsRadios", :type => "radio", :value => "female"}/
+            Female
+        .radio
+          %label
+            %input#optionsRadios2{:name => "optionsRadios", :type => "radio", :value => "male"}/
+            Male
+    .form-group
+      %label.col-lg-2.control-label Will you come back to help people again? 
+      .col-lg-10
+        .radio
+          %label
+            %input#optionsRadios1{:checked => "checked", :name => "optionsRadios", :type => "radio", :value => "willingness1"}/
+            YES
+        .radio
+          %label
+            %input#optionsRadios2{:name => "optionsRadios", :type => "radio", :value => "willingness2"}/
+            NO        
+    .form-group
+      %label.col-lg-2.control-label{:for => "textArea"} Please leave any feedback here. 
+      .col-lg-10
+        %textarea#textArea.form-control{:rows => "3"}
+        %span.help-block Your feedback can be written only in English or Spanish. We might not be able to respond to feedback written in other languages. 
+    .form-group
+      .col-lg-10.col-lg-offset-2
+        %button.btn.btn-default{:type => "reset"} Cancel
+        %button.btn.btn-primary{:type => "submit", :href =>listener_search_path,:method => :post} Submit
+//Will store the time of the session, feedback, the listener id, subject. 

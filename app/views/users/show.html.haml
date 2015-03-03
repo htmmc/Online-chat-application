@@ -12,7 +12,7 @@
             %p Language: #{@user.language}
             %p Age Group: #{@user.agegroup}
             %p  
-              %a.btn.btn-primary{:href => "chat_sessions", :role => "button"} Talk Now
+              %a.btn.btn-primary{:href => "chat_session/#{@user.id}", :role => "button"} Talk Now
     .col-xs-6.col-md-9
       .description_listener
         %h3 Introduction: 
@@ -29,6 +29,8 @@
             %h4 #{@user.username}
             %p Language: #{@user.language}
             %p Age Group: #{@user.agegroup}
+            - if @user.id == current_user.id 
+              %a.btn.btn-primary.btn{:href => "#{current_user.id}/edit", :method => "get", :role => "button"} Edit my page           
     .col-xs-6.col-md-9
       .description_listener
         %h3 Looking for someone who can help me: 

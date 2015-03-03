@@ -6911,6 +6911,9 @@ a.list-group-item-danger.active:focus {
 #page1 h2, p, a.btn.btn-primary.btn{
   text-align: center;
 }
+a.btn.btn-primary.btn{
+  margin:20px;
+}
 footer {
   background-color: #ecf0f1;
   height:200px;
@@ -6918,4 +6921,8 @@ footer {
   bottom:0;
   left: 0;
   right: 0;
+}
+.session_select{
+  text-align: center;
+  margin:40px auto;
 }

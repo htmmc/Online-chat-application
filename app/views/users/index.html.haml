@@ -1,7 +1,5 @@
 = render :partial => "pages/index_header"
-
-%h2 Let's start a conversation as a:
-
-%a.btn.btn-primary.btn{:href => "users/chat-session/listener", :role => "button"} Listener 
-
-%a.btn.btn-primary.btn{:href => "users/chat-session/user", :role => "button"} Speaker
+.session_select
+  %h2 Let's start a conversation as a:
+  %a.btn.btn-primary.btn{:href => "users/chat_session/listener", :role => "button"} Listener 
+  %a.btn.btn-primary.btn{:href => "users/chat_session/user", :role => "button"} Speaker

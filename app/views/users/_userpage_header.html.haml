@@ -1,16 +1,46 @@
-%header.container-fluid
-  %ul.nav.navbar-nav.default.pull-left
-    %li logo
-  .pull-right.header-right
-    %ul.nav.navbar-nav.default.pull-right
-      - if current_user.present?
+%header.nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => root_path} Logo
+      %ul.nav.navbar-nav.navbar-right
         %li
-          = link_to "Sign out", destroy_user_session_path, :method => :delete
-        %li Logged in as: #{current_user.username}  
-        %li.img.avatar{:alt => "avatar", :src => ""}/
-      - else 
-        %li 
-          = link_to "Sign in", new_user_session_path
-        %li
-          =link_to "Sign up", new_user_registration_path       
-      
+          %a{:href => "/#How to become a listener"} How to Become a Listener    
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Menu
+            %span.caret
+          %ul.dropdown-menu{:role => "menu"}
+            %li
+              %a{:href =>"/#How it works"} How it works
+            %li
+              %a{:href =>"/#FAQ"} FAQ
+            %li
+              %a{:href =>"/#Reviews"} Reviews
+            %li.divider
+            %li
+              %a{:href => "/about_us"} About us
+            %li.divider
+            %li
+              %a{:href => "mission_statement"} Mission Statement
+        -if current_user.present?
+          %li
+            %a{:href =>"#{current_user.id}"} Logged in as: #{current_user.username}
+          %li
+            %a{:href => user_path(current_user) } Dashboard
+          %li
+            %a{:href => "chat_session"} Talk Now
+          %li
+            %a{:href => destroy_user_session_path, :"data-method" => :delete} Sign out
+        - else 
+          %li 
+            %a{:href => new_user_session_path} Sign in
+          %li
+            %a{:href => new_user_registration_path} Sign up
+        
