@@ -1,12 +1,13 @@
 = render :partial => "index_header"
 .main-container
   .jumbotron
-    %h1 I want to help others by listening to
-    .row.buttons
-      %a.btn.btn-primary.btn{:href => chat_session_path, :role => "button"} anyone who is online now
-      - if current_user.present?
-        %a.btn.btn-primary.btn{:href => user_path(current_user), :role => "button"} someone with a particular subject in mind
-      - else 
-        %a.btn.btn-primary.btn{:href => new_user_registration_path, :role => "button"} someone with a particular subject in mind
+    .session_select
+      %h1 I want to help by listening to
+      .row.buttons
+        %a.btn.btn-primary.btn{:href => chat_session_path, :role => "button"} anyone who is online now
+        - if current_user.present?
+          %a.btn.btn-primary.btn{:href => user_path(current_user), :role => "button"} someone with a particular subject in mind
+        - else 
+          %a.btn.btn-primary.btn{:href => new_user_registration_path, :role => "button"} someone with a particular subject in mind
 
 = render :partial => "footer"

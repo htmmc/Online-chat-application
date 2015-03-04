@@ -2704,9 +2704,7 @@ textarea.input-sm,
 select[multiple].input-sm {
   height: auto;
 }
-.form_container{
-  width: 60%;
-}
+
 .form-group-sm .form-control {
   height: 33px;
   padding: 6px 9px;
@@ -4855,15 +4853,14 @@ a.badge:focus {
 }
 .jumbotron{
   padding: 30px 15px;
-  margin-bottom: 30px;
   color: inherit;
   background-image:url(https://ununsplash.imgix.net/photo-1414604582943-2fd913b3cb17?q=75&fm=jpg&s=f446e822ccd1b4608242cad57d747769);
   width: 100%;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 0;
 }
-
 
 .jumbotron h1,
 .jumbotron .h1 {
@@ -6876,6 +6873,16 @@ a.list-group-item-danger.active:focus {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.jumbotron.page1, .page3{
+  background-image: none;
+}
+.jumbotron.about_us{
+  background-image: url(https://unsplash.imgix.net/photo-1422486578093-18e296095a04?q=75&fm=jpg&s=fe0d26d2dde7afaddd9eb97ae20031be);
+}
+.text_list{
+  width:90%;
+  text-align: left;
+}
 #page1,
 #page2,
 #page3,
@@ -6891,7 +6898,7 @@ a.list-group-item-danger.active:focus {
 #page2 p{
   color:#fff;
   width:70%;
-  margin:70px auto;
+  margin:50px auto;
   text-align: center;
 }
 
@@ -6908,9 +6915,7 @@ a.list-group-item-danger.active:focus {
   margin-top: 50px;
   text-align: center;
 }
-#page1 h2, p, a.btn.btn-primary.btn{
-  text-align: center;
-}
+
 a.btn.btn-primary.btn{
   margin:20px;
 }
@@ -6921,8 +6926,22 @@ footer {
   bottom:0;
   left: 0;
   right: 0;
+  padding: 50px 50px;
 }
 .session_select{
   text-align: center;
+  margin: auto;
+  width:80%;
+}
+.devise_form_body{
+  width:40%;
+  margin: 40px auto;
+}
+.devise_form_footer{
+  width:40%;
+  margin: 40px auto;
+}
+.form-container{
+  width:60%;
   margin:40px auto;
 }
