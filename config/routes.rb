@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get 'users/feedback_listener' => 'users#feedback_listener', as: :feedback_listener
   get 'users/report_abuse_listener' =>'users#report_abuse_listener', as: :report_abuse_listener
   get 'users/report_abuse_user' => 'users#report_abuse_user', as: :report_abuse_user
+
+  get 'users/webrtc_demo' => 'users#webrtc_demo', as: :webrtc_demo
   
   resources :users
   resources "contacts", only: [:new, :create]

@@ -1,0 +1,12 @@
+%h2 WEBRTC DEMO
+%h3 Your online session
+%form#createRoom
+  %input#sessionInput/
+  %button{:type => "submit"} Connect now
+.videoContainer
+  %video#localVideo{:oncontextmenu => "return false;", :style => "height: 150px;"}
+  %meter#localVolume.volume{:high => "-25", :low => "-40", :max => "-20", :min => "-45"}
+#localContainer.videoContainer
+  #remotesVideos
+  %script{:src => "onlinechat.js"}
+  %script{:src => "//simplewebrtc.com/latest.js"}
