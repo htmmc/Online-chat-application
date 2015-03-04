@@ -12,7 +12,7 @@
         %img{:src =>'http://www.clker.com/cliparts/5/7/4/8/13099629981030824019profile.svg.thumb.png', :alt =>"profile photo"}
           .caption
             = f.label :username
-            = f.text_field :username
+            = f.text_field :username, required: true
             %br/
             = f.label :listener
             = f.label :listener, 'Yes', :value => true 
@@ -21,7 +21,7 @@
             = f.radio_button :listener, false
             %br/         
             = f.label :language 
-            = f.text_field :language
+            = f.text_field :language, required: true
             %br/  
             = f.label :agegroup 
             = f.text_field :agegroup 

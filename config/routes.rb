@@ -18,8 +18,13 @@ Rails.application.routes.draw do
   get 'users/report_abuse_listener' =>'users#report_abuse_listener', as: :report_abuse_listener
   get 'users/report_abuse_user' => 'users#report_abuse_user', as: :report_abuse_user
 
-  get 'users/webrtc_demo' => 'users#webrtc_demo', as: :webrtc_demo
-  
+  resources :users do
+    member do
+      put :ready
+      put :busy
+    end
+  end
+
   resources :users
   resources "contacts", only: [:new, :create]
 

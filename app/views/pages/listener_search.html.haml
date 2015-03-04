@@ -180,6 +180,9 @@
           %li category: #{l.categories}
           %li license: #{l.license_type}
           %li religion: #{l.religion}
-          %a.btn.btn-primary.btn-xs{:href => "/users/chat_session/user/#{l.id}", :type => "button", :data => l.id } Start a Conversation
-          %a.btn.btn-primary.btn-xs{:href => "users/#{l.id}", :type => "button", :data => l.id, } Detail
+          %a.btn.btn-primary.btn-xs{:href => user_path(l), :type => "button", :data => l.id, } Detail
+          -if l.ready 
+            %a.btn.btn-primary.btn-xs{:href => chat_session_path(l), :type => "button", :data => l.id } Start a Conversation
+          - else 
+            %a.btn.btn-primary.btn-xs{:href => user_path(l), :type => "button", :data => l.id, } Schedule a call
           

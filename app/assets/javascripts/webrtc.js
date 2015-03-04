@@ -1,5 +1,5 @@
 window.startWebRtc = function startWebRtc () {
-    var room = 'webrtc_demo'
+    var room = 'chat_session'
 
     var webrtc = new SimpleWebRTC({
         localVideoEl: 'localVideo',

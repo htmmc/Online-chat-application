@@ -11,7 +11,7 @@ when "development"
     	beginning_of_available_time: Faker::Time.forward(2, :morning), 
     	end_of_available_time: Faker::Time.forward(3, :morning), 
     	listener: [true, false].sample,
-    	language: ['English', 'Spanish', 'Chinese', 'French', 'English'].sample,
+    	language: ['English', 'Spanish', 'Chinese', 'French', 'English', 'English'].sample,
     	license_type: ['none', 'Licensed Professional Counselor', 'Occupational therapist', 'School Counserlor', 'Licensed Psychologist'].sample,
     	religion: ['none', 'Islam', 'Buddhism', 'Catholicism', 'Protestantism', 'Undisclosed'].sample
     	)

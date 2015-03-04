@@ -12,11 +12,15 @@ class UsersController < ApplicationController
 		#/user/chat_session/4
 		#/user/chat_session
 		#redirect to a chatting page for user to connect to listener
-		if request.path == "/users/chat_session"
-			@listener = User.where("listener = true").order("RANDOM()").first
-			redirect_to chat_session_path(@listener)
-		else
-			@listener = User.find_by(id: params[:id])
+		#originally used this line to determine the path request.path == "/users/chat_session"
+		if !current_user.ready
+			puts 'NOT READY'
+			redirect_to users_path
+		elsif current_user.listener == true && params[:id].to_i != current_user.id 
+			puts 'NOT ME'
+			redirect_to chat_session_path(current_user)
+		elsif current_user.listener == false 
+			@listener = User.where(listener: true).order("RANDOM()").first
 		end
 	end 
 
@@ -41,6 +45,25 @@ class UsersController < ApplicationController
 	    end
   	end  
 
+  	def ready
+  		if current_user.listener == true
+  			current_user.update(:ready => true)
+  			redirect_to chat_session_path(current_user)
+  		else 
+  			current_user.update(:ready => true)
+  			redirect_to chat_session_path(current_user)
+  		end 
+
+  	end 
+
+  	def busy 
+  		if current_user.listener == true
+  			current_user.ready == false
+  			redirect_to user_path(current_user)
+  		end 
+  	end 
+
+
   	def feedback_user
 # add criteria later
   	end
@@ -53,7 +76,7 @@ class UsersController < ApplicationController
 		end
 	end 
 	def user_params
-		params.require(:user).permit(:username, :license_type, :religion, :language, :agegroup, :description, :specialty, :categories, :listener)
+		params.require(:user).permit(:username, :license_type, :religion, :language, :agegroup, :description, :specialty, :categories, :listener, :ready)
 	end 
 #	def send_confirmation_email
 #		will set up later

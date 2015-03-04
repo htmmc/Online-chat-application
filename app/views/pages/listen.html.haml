@@ -2,12 +2,19 @@
 .main-container
   .jumbotron
     .session_select
-      %h1 I want to help by listening to
-      .row.buttons
-        %a.btn.btn-primary.btn{:href => chat_session_path, :role => "button"} anyone who is online now
-        - if current_user.present?
-          %a.btn.btn-primary.btn{:href => user_path(current_user), :role => "button"} someone with a particular subject in mind
+      - if current_user.present? == false 
+        %h1 Let's start helping others. 
+        .row.buttons
+          %a.btn.btn-primary.btn{:href => new_user_session_path, :role => "button"} Sign in
+          %a.btn.btn-primary.btn{:href => new_user_registration_path, :role => "button"} Sign up
+      - else 
+        %h1 I want to help by listening to
+        - if current_user.listener
+          .row.buttons
+            %a.btn.btn-primary.btn{:href => ready_user_path(current_user), :role => "button", :"data-method" => :put} anyone who is online now
+            %a.btn.btn-primary.btn{:href => user_path(current_user), :role => "button"} someone with a particular subject in mind
         - else 
-          %a.btn.btn-primary.btn{:href => new_user_registration_path, :role => "button"} someone with a particular subject in mind
+          .row.buttons
+            %a.btn.btn-primary.btn{:href => user_path(current_user), :role => "button"} Become a listener now    
 
 = render :partial => "footer"
