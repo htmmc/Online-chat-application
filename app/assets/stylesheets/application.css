@@ -29,6 +29,7 @@ html {
 
 body {
   margin: 0;
+  height:100%;
 }
 article,
 aside,
@@ -6924,13 +6925,15 @@ a.btn.btn-primary.btn{
 }
 footer {
   background-color: #ecf0f1;
+  clear:both;
   height:200px;
+  width:100%;
   position-bottom:0;
   bottom:0;
-  left: 0;
-  right: 0;
+  left:0;
   padding: 50px 50px;
 }
+
 .session_select{
   text-align: center;
   margin: auto;
@@ -6972,4 +6975,10 @@ video#localVideo{
 
 a.btn.btn-primary.btn-xs.search{
   margin:10px;
+}
+.container_listener.button_row{
+  text-align: center;
+}
+.container_listener.list-group{
+  padding:10px;
 }

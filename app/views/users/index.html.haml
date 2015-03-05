@@ -5,6 +5,5 @@
     %a.btn.btn-primary.btn{:href => ready_user_path(current_user), :"data-method" => :put, :role => "button"} Listener 
 
   - else 
-    %a.btn.btn-primary.btn{:href => edit_user_path(current_user), :role => "button"} Listener
-    %i Edit your profile to be a Listener 
-  %a.btn.btn-primary.btn{:href => chat_session_path, :role => "button"} Speaker
+    %a.btn.btn-primary.btn{:href => edit_user_path(current_user), :role => "button"} Listener (edit profile first)
+  %a.btn.btn-primary.btn{ready_user_path(current_user), :"data-method" => :put, :role => "button"} Speaker
