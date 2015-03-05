@@ -27,7 +27,7 @@
     - else 
       %h2 #{@user.username}'s Profile Page
       .row.profile_picture
-        .col-xs-6.col-md-3
+        .col-xs-6.col-md-4
           .thumbnail
             %img{:src =>'http://www.clker.com/cliparts/5/7/4/8/13099629981030824019profile.svg.thumb.png', :alt =>"profile photo"}
               .caption
@@ -37,13 +37,13 @@
                 %p CALENDAR (PLACEHOLDER)
                 - if @user.id == current_user.id 
                   %a.btn.btn-primary.btn{:href => "#{current_user.id}/edit", :method => "get", :role => "button"} Edit my page           
-        .col-xs-6.col-md-9
+        .col-xs-6.col-md-8
           .description_listener
             %h3 Looking for someone who can help me: 
             %p #{@user.description}
             %p  
             - if @user.id == current_user.id 
               %a.btn.btn-primary.btn{:href => "#{current_user.id}/edit", :method => "get", :role => "button"} Become a listener 
-    = link_to "Back", :back
+    = link_to "Go Back to Listener Search", listener_search_path
   .col-xs-2
 

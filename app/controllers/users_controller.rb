@@ -58,8 +58,11 @@ class UsersController < ApplicationController
 
   	def busy 
   		if current_user.listener == true
-  			current_user.ready == false
+  			current_user.update(:ready => false)
   			redirect_to user_path(current_user)
+  		else 
+  			current_user.update(:ready => false)
+  			redirect_to listener_search_path
   		end 
   	end 
 
