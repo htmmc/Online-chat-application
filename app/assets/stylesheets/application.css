@@ -6964,15 +6964,17 @@ video#localVideo{
 .col-xs-8.profile_edit_form{
   text-align: center;
 }
-.col-xs-8.profile_edit_form.thumbnail{
-  margin:20px;
-  width:15%;
-  height:auto;
+.thumbnail.profile{
+  margin:10px auto;
+  height:100px;
+  width:100px;
 }
-.edit_user{
+img.profile_photo{
+  height:90%;
+  width:90%;
+  margin:5px auto;
   text-align: center;
 }
-
 a.btn.btn-primary.btn-xs.search{
   margin:10px;
 }
@@ -6982,3 +6984,54 @@ a.btn.btn-primary.btn-xs.search{
 .container_listener.list-group{
   padding:10px;
 }
+.row.profile.button{
+  text-align: center;
+}
+.col-xs-8.row.profile, .col-xs-8.profile_edit_form{
+  background-color: #eee;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.row.profile.bottom{
+  text-align: center;
+}
+.row.profile_edit_body{
+  text-align:left;
+  padding-left:20px;
+  padding-right:20px;
+}
+.thumbnail.profile_edit{
+  width:150px;
+  height:150px;
+  margin-right: 0;
+  margin-left: 0;
+  margin:10px auto;
+  border:none;
+  padding-top:5px;
+}
+img.profile_edit{
+  margin:10px;
+  height:130px;
+  width:130px;
+}
+label.edit_profile{
+  margin-right:20px;
+  margin:5px;
+}
+input.edit_profile{
+  width:60%;
+}
+textarea.edit_profile{
+  width: 50%;
+}
+.edit_profile_form_item{
+  height: 50px;
+}
+.edit_profile_form_item_bottom{
+  text-align: center;
+}
+.row profile_edit_boty{
+  width:60%;
+  text-align: center;
+}
+

@@ -1,49 +1,54 @@
 = render :partial => "userpage_header"
 .profile_container
   .col-xs-2
-  .col-xs-8
+  .col-xs-8.row.profile
     - if @user.listener == true
       %h2 #{@user.username}'s Profile Page
-      .row.profile_picture
-        .col-xs-6.col-md-3
-          .thumbnail
-            %img{:src =>'http://www.clker.com/cliparts/5/7/4/8/13099629981030824019profile.svg.thumb.png', :alt =>"profile photo"}
-              .caption
-                %h4 #{@user.username}
-                %p License: #{@user.license_type}
-                %p Religion: #{@user.religion}
-                %p Language: #{@user.language}
-                %p Age Group: #{@user.agegroup}
-                %p CALENDAR (PLACEHOLDER)
-                -if @user.listener == true && @user.ready == true
-                  %p Listener is currently available.
-                  %a.btn.btn-primary{:href => ready_user_path, :"data-method" =>:put, :role => "button"} Talk Now
-        .col-xs-6.col-md-9
-          .description_listener
-            %h3 Introduction: 
-            %p #{@user.description}
-      - if @user.id == current_user.id 
-        %a.btn.btn-primary.btn{:href => "#{current_user.id}/edit", :method => "get", :role => "button"} Edit my page 
+      .col-xs-6.col-md-4.profile_left
+        .thumbnail.profile
+          %img{:class =>"profile_photo", :src =>'http://www.clker.com/cliparts/5/7/4/8/13099629981030824019profile.svg.thumb.png', :alt =>"profile photo"}
+        .caption
+          %h4 #{@user.username}
+          %p License: #{@user.license_type}
+          %p Religion: #{@user.religion}
+          %p Language: #{@user.language}
+          %p Age Group: #{@user.agegroup}
+          %p CALENDAR (PLACEHOLDER)
+          -if @user.listener == true && @user.ready == true
+            .row.profile.button 
+              %p Listener is currently available.
+              %a.btn.btn-primary{:href => ready_user_path, :"data-method" =>:put, :role => "button"} Talk Now
+      .col-xs-6.col-md-8
+        .description_listener
+          %h3 Introduction: 
+          %p #{@user.description}
+          - if @user.id == current_user.id
+            .row.profile.button 
+              %a.btn.btn-primary.btn{:href => "#{current_user.id}/edit", :method => "get", :role => "button"} Edit my page 
+        .row.profile.bottom
+          = link_to "Go Back to Listener Search", listener_search_path
     - else 
       %h2 #{@user.username}'s Profile Page
-      .row.profile_picture
-        .col-xs-6.col-md-4
-          .thumbnail
-            %img{:src =>'http://www.clker.com/cliparts/5/7/4/8/13099629981030824019profile.svg.thumb.png', :alt =>"profile photo"}
-              .caption
-                %h4 #{@user.username}
-                %p Language: #{@user.language}
-                %p Age Group: #{@user.agegroup}
-                %p CALENDAR (PLACEHOLDER)
-                - if @user.id == current_user.id 
-                  %a.btn.btn-primary.btn{:href => "#{current_user.id}/edit", :method => "get", :role => "button"} Edit my page           
-        .col-xs-6.col-md-8
-          .description_listener
-            %h3 Looking for someone who can help me: 
-            %p #{@user.description}
-            %p  
-            - if @user.id == current_user.id 
+      .col-xs-6.col-md-4.row.profile
+        .thumbnail.profile
+          %img{:class =>"profile_photo", :src =>'http://www.clker.com/cliparts/5/7/4/8/13099629981030824019profile.svg.thumb.png', :alt =>"profile photo"}
+        .caption
+          %h4 #{@user.username}
+          %p Language: #{@user.language}
+          %p Age Group: #{@user.agegroup}
+          %p CALENDAR (PLACEHOLDER)
+          - if @user.id == current_user.id 
+            .row.profile.button 
+              %a.btn.btn-primary.btn{:href => "#{current_user.id}/edit", :method => "get", :role => "button"} Edit my page           
+      .col-xs-6.col-md-8
+        .description_listener
+          %h3 Looking for someone who can help me: 
+          %p #{@user.description}
+          %p  
+          - if @user.id == current_user.id 
+            .row.profile.button 
               %a.btn.btn-primary.btn{:href => "#{current_user.id}/edit", :method => "get", :role => "button"} Become a listener 
-    = link_to "Go Back to Listener Search", listener_search_path
+        .row.profile.bottom
+          = link_to "Go Back to Listener Search", listener_search_path
   .col-xs-2
 
