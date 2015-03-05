@@ -173,7 +173,7 @@
   .container_listener.list-group
     - if @listeners.any?
       - @listeners.each do |l| 
-        %ul.col-sm-3.listner_summary.list-group-item
+        %ul.col-sm-3.listner_summary.list-group-item.list-unstyled
           %li name: #{l.name}
           %li language:  #{l.language}
           %li age group: #{l.agegroup}
