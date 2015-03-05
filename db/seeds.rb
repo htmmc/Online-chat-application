@@ -14,7 +14,7 @@ when "development"
     	language: ['English', 'Spanish', 'Chinese', 'French', 'English', 'English'].sample,
     	license_type: ['none', 'Licensed Professional Counselor', 'Occupational therapist', 'School Counserlor', 'Licensed Psychologist'].sample,
     	religion: ['none', 'Islam', 'Buddhism', 'Catholicism', 'Protestantism', 'Undisclosed'].sample,
-        categories: ['Anxiety','Blah - Everyday matters','Business','Depression','Disability','Eating Disorders','Emotional support','Family Issues','Feeling Lost','Health and Wellness','LGBTQ','Life in general','Panic Attacks','Relationships','Sex','Self-Harm','Substance Abuse','Traumatic Experiences','Work Stress'].sample
+        categories: ['Anxiety','Blah - general','Business','Depression','Disability','Eating Disorders','Emotional support','Family Issues','Feeling Lost','Health and Wellness','LGBTQ','Life in general','Panic Attacks','Relationships','Sex','Self-Harm','Substance Abuse','Traumatic Experiences','Work Stress'].sample
     	)
   end
 end
