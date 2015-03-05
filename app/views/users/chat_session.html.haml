@@ -8,7 +8,7 @@
     %button{:type => "submit"} Connect now
   .videoContainer
     %video#localVideo{:oncontextmenu => "return false;"}
-    %meter#localVolume.volume{:high => "-25", :low => "-40", :max => "-20", :min => "-45"}
+    %meter#localVolume.volume.row{:high => "-25", :low => "-40", :max => "-20", :min => "-45"}
   #localContainer.videoContainer
     #remotesVideos
     %script{:src => "//simplewebrtc.com/latest.js"}  

@@ -6957,7 +6957,7 @@ footer {
   text-align: center;
 }
 video#localVideo{
-  height:200px;
+  height:300px;
   width:300px;
   margin:30px;
 }
@@ -7034,4 +7034,17 @@ textarea.edit_profile{
   width:60%;
   text-align: center;
 }
-
+meter.volume.row{
+  width:50%;
+  position:center;
+  margin:5px auto;
+  z-index: 1;
+} 
+video#localVideo{
+  margin:30px 30px 10px 30px;
+}
+.videoContainer{
+  margin:5px auto;
+  padding-right:50px;
+  padding-left:50px;
+}
