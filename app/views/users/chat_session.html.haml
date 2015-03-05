@@ -1,20 +1,18 @@
 = render :partial => "userpage_header"
-%h2 User page
-%p You are logged in as: #{current_user.username}
+.chat_session_container
+  %h2 Web Session demo 
+  %p You are logged in as: #{current_user.username}  
 
+  %form#createRoom
+    %input#sessionInput/
+    %button{:type => "submit"} Connect now
+  .videoContainer
+    %video#localVideo{:oncontextmenu => "return false;"}
+    %meter#localVolume.volume{:high => "-25", :low => "-40", :max => "-20", :min => "-45"}
+  #localContainer.videoContainer
+    #remotesVideos
+    %script{:src => "onlinechat.js"}
+    %script{:src => "//simplewebrtc.com/latest.js"}  
 
-%h2 Web Session demo 
-%h3 Your online session 
-%form#createRoom
-  %input#sessionInput/
-  %button{:type => "submit"} Connect now
-.videoContainer
-  %video#localVideo{:oncontextmenu => "return false;", :style => "height: 150px;"}
-  %meter#localVolume.volume{:high => "-25", :low => "-40", :max => "-20", :min => "-45"}
-#localContainer.videoContainer
-  #remotesVideos
-  %script{:src => "onlinechat.js"}
-  %script{:src => "//simplewebrtc.com/latest.js"}
-
-%a.btn.btn-primary.btn-sm{:href => report_abuse_user_path, :method => "delete", :role => "button"} Report Abuse
-%a.btn.btn-primary.btn-sm{:href => feedback_user_path, :method => "delete", :role => "button"} End Session 
+  %a.btn.btn-primary.btn-sm{:href => report_abuse_user_path, :method => "delete", :role => "button"} Report Abuse
+  %a.btn.btn-primary.btn-sm{:href => feedback_user_path, :method => "delete", :role => "button"} End Session 

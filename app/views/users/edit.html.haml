@@ -1,53 +1,55 @@
 = render :partial => "userpage_header"
-%h2 Edit Contact information for: #{@current_user.username}
-- if @errors.present?
-  %ul
-    - @errors.each do |msg|
-      %li= msg
+.profile_container
+  .col-xs-2
+  .col-xs-8.profile_edit_form
+    %h2 Edit Contact information for: #{@current_user.username}
+    - if @errors.present?
+      %ul
+        - @errors.each do |msg|
+          %li= msg    
 
-=form_for current_user do |f|
-  .row.profile_picture
-    .col-xs-6.col-md-3
+    =form_for current_user do |f|
       .thumbnail
         %img{:src =>'http://www.clker.com/cliparts/5/7/4/8/13099629981030824019profile.svg.thumb.png', :alt =>"profile photo"}
-          .caption
-            = f.label :username
-            = f.text_field :username, required: true
-            %br/
-            = f.label :listener
-            = f.label :listener, 'Yes', :value => true 
-            = f.radio_button :listener, true 
-            = f.label :listener, 'No', :value => false 
-            = f.radio_button :listener, false
-            %br/         
-            = f.label :language 
-            = f.text_field :language, required: true
-            %br/  
-            = f.label :agegroup 
-            = f.text_field :agegroup 
-            %br/
-            = f.label :categories
-            = f.text_field :categories
-            %br 
-            = f.label :religion 
-            = f.text_field :religion
-            %br/
-            = f.label :license_type 
-            = f.text_field :license_type
-            %br/
-            =f.label :description
-            =f.text_area :description 
-            %br/
-            = f.label :specialty
-            = f.text_field :specialty
-            %br
-            = f.submit 'Save'
-//Add autocomplete in the future 
-      
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", destroy_user_session_path, data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+      .caption
+        = f.label :username
+        = f.text_field :username, required: true
+        %br/
+        = f.label :listener
+        = f.label :listener, 'Yes', :value => true 
+        = f.radio_button :listener, true 
+        = f.label :listener, 'No', :value => false 
+        = f.radio_button :listener, false
+        %br/         
+        = f.label :language 
+        = f.text_field :language, required: true
+        %br/  
+        = f.label :agegroup 
+        = f.text_field :agegroup 
+        %br/
+        = f.label :categories
+        = f.text_field :categories
+        %br 
+        = f.label :religion 
+        = f.text_field :religion
+        %br/
+        = f.label :license_type 
+        = f.text_field :license_type
+        %br/
+        =f.label :description
+        =f.text_area :description 
+        %br/
+        = f.label :specialty
+        = f.text_field :specialty
+        %br
+        = f.submit 'Save'
+    //Add autocomplete in the future 
+          
+    %h3 Cancel my account
+    %p
+      Unhappy? #{button_to "Cancel my account", destroy_user_session_path, data: { confirm: "Are you sure?" }, method: :delete}
+    = link_to "Back", :back
+  .col-xs-2
 //.form-horizontal
 //  %fieldset
 //    .form-group

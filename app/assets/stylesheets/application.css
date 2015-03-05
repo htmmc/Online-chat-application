@@ -6945,3 +6945,25 @@ footer {
   width:60%;
   margin:40px auto;
 }
+.chat_session_container{
+  width:60%;
+  margin:40px auto;
+  text-align: center;
+}
+video#localVideo{
+  height:200px;
+  width:300px;
+  margin:30px;
+}
+.col-xs-8.profile_edit_form{
+  text-align: center;
+}
+.col-xs-8.profile_edit_form.thumbnail{
+  margin:20px;
+  width:15%;
+  height:auto;
+}
+.edit_user{
+  text-align: center;
+  width:;
+}
