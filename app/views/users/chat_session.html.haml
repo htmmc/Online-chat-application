@@ -14,6 +14,6 @@
       #remotes
       %script{:src => "//simplewebrtc.com/latest.js"}
   .row.container_bottom
-    %a.btn.btn-primary.btn-sm{:href => busy_user_path(current_user), :"data-method" => "put", :role => "button"} Report Abuse
+    %a.btn.btn-primary.btn-sm{:href => report_abuse_path, :role => "button"} Report Abuse
     %a.btn.btn-primary.btn-sm{:href => busy_user_path(current_user), :"data-method" => "put", :role => "button"} End Session 
     = link_to "Cancel this session", busy_user_path(current_user), :method =>"put"
