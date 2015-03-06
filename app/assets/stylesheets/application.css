@@ -6962,9 +6962,8 @@ footer {
   margin:40px auto;
 }
 .chat_session_container{
-  width:60%;
-  margin:40px auto;
-  text-align: center;
+  width:80%;
+  margin:30px auto;
 }
 video#localVideo{
   height:300px;
@@ -7053,6 +7052,9 @@ img.media-object{
   height:64px;
 }
 .row.index_button{
+  text-align: center;
+}
+.row.container_top, .row.container_bottom{
   text-align: center;
 }
 .videoContainer {

@@ -1,17 +1,18 @@
 = render :partial => "userpage_header"
 .chat_session_container
-  %h2 Web Session demo 
-  %p You are logged in as: #{current_user.username}  
-
-  %form#createRoom
-    %input#sessionInput/
-    %button{:type => "submit"} Connect now
+  .row.container_top
+    %h2 Web Session demo 
+    %p You are logged in as: #{current_user.username}  
+    %form#createRoom
+      %input#sessionInput/
+      %button{:type => "submit"} Connect now
   .videoContainer
     %video#localVideo{:oncontextmenu => "return false;"}
     %meter#localVolume.volume.row{:high => "-25", :low => "-40", :max => "-20", :min => "-45"}
-  #localContainer.videoContainer
+  #localContainer.videoContainer.clearfix
     #remotes
     %script{:src => "//simplewebrtc.com/latest.js"}
-  %a.btn.btn-primary.btn-sm{:href => busy_user_path(current_user), :"data-method" => "put", :role => "button"} Report Abuse
-  %a.btn.btn-primary.btn-sm{:href => busy_user_path(current_user), :"data-method" => "put", :role => "button"} End Session 
-  = link_to "Cancel this session", busy_user_path(current_user), :method =>"put"
+  .row.container_bottom
+    %a.btn.btn-primary.btn-sm{:href => busy_user_path(current_user), :"data-method" => "put", :role => "button"} Report Abuse
+    %a.btn.btn-primary.btn-sm{:href => busy_user_path(current_user), :"data-method" => "put", :role => "button"} End Session 
+    = link_to "Cancel this session", busy_user_path(current_user), :method =>"put"
