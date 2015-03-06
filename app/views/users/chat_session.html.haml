@@ -6,12 +6,13 @@
     %form#createRoom
       %input#sessionInput/
       %button{:type => "submit"} Connect now
-  .videoContainer
-    %video#localVideo{:oncontextmenu => "return false;"}
-    %meter#localVolume.volume.row{:high => "-25", :low => "-40", :max => "-20", :min => "-45"}
-  #localContainer.videoContainer.clearfix
-    #remotes
-    %script{:src => "//simplewebrtc.com/latest.js"}
+  .row.container_body    
+    .videoContainer
+      %video#localVideo{:oncontextmenu => "return false;"}
+      %meter#localVolume.volume.row{:high => "-25", :low => "-40", :max => "-20", :min => "-45"}
+    #localContainer.videoContainer
+      #remotes
+      %script{:src => "//simplewebrtc.com/latest.js"}
   .row.container_bottom
     %a.btn.btn-primary.btn-sm{:href => busy_user_path(current_user), :"data-method" => "put", :role => "button"} Report Abuse
     %a.btn.btn-primary.btn-sm{:href => busy_user_path(current_user), :"data-method" => "put", :role => "button"} End Session 
