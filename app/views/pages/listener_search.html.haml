@@ -31,7 +31,9 @@
             %option{:value => "19"} Work Stress
         .form-group.col-sm-4
           %label.search_label{:for => "keyword"} Keyword Search
-          %input#keyword.form-control{:name => "keyword", :placeholder => "Find by Keywords", :style => "width:220px", :type => "search", :value => ""}
+          .keyword_search_form
+            %input#keyword.form-control{:name => "keyword", :placeholder => "Find by Keywords", :style => "width:220px", :type => "search", :style="width: 60%;display: inline;"}
+            %input#keyword_search{:type => "submit", :name=>"commit", :value=>"search"}
         .form_group.col-sm-4
           %label.search_label{:for => "sortby"} Language
           %select#language.form-control{:name => "language", :width => "100px"}

@@ -7084,3 +7084,11 @@ img.media-object{
     text-align: center;
     color: #fff
 }
+.keyword_search_form{
+  display:inline;
+  float:left;
+  width:100%;
+}
+.form-control#keyword{
+  margin-right:5px;
+}
