@@ -4864,7 +4864,7 @@ a.badge:focus {
 }
 .jumbotron p {
   margin-bottom: 15px;
-  font-size: 23px;
+  font-size: 1.5em;
   font-weight: 200;
 }
 .jumbotron > hr {
@@ -6840,11 +6840,10 @@ a.list-group-item-danger.active:focus {
 }
 .jumbotron.mission_statement{
   padding: 30px 15px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-image:url(https://unsplash.imgix.net/photo-1423480324944-3bfd580706e1?q=75&fm=jpg&s=51612703ba2082b4bcb34c4f1cced04f);
-  background: transparent;
-  height: 500px;
+  margin-bottom: 10px;
+  color: #fff;
+  background-image:url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199912?q=75&fm=jpg&s=9bf9f2ef5be5cb5eee5255e7765cb327);
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -6882,6 +6881,8 @@ a.list-group-item-danger.active:focus {
   background-image: none;
 }
 .jumbotron.about_us{
+  height: 100vh;
+  color: #fff;
   background-image: url(https://unsplash.imgix.net/photo-1422486578093-18e296095a04?q=75&fm=jpg&s=fe0d26d2dde7afaddd9eb97ae20031be);
 }
 .text_list{
@@ -6942,7 +6943,7 @@ footer {
   margin: auto;
   width:80%;
 }
-.session_select.page2{
+.session_select.page2, .mission_statement, .about_us {
   padding:10px;
   background-color: rgba(32, 45, 63, 0.4);
 }
