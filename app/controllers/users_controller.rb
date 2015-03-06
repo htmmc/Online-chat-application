@@ -66,10 +66,13 @@ class UsersController < ApplicationController
   		end 
   	end 
 
-
-  	def feedback_user
-# add criteria later
-  	end
+  	def feedback
+  		
+  	end 
+  	def report_abuse
+  		
+  	end 
+ 
 
 	private 
 

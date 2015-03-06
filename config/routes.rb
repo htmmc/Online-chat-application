@@ -13,10 +13,8 @@ Rails.application.routes.draw do
   get 'contacts' => 'contacts#new'
   
   get 'users/chat_session(/:id)' => 'users#chat_session', as: :chat_session
-  get 'users/feedback_user' =>'users#feedback_user', as: :feedback_user
-  get 'users/feedback_listener' => 'users#feedback_listener', as: :feedback_listener
-  get 'users/report_abuse_listener' =>'users#report_abuse_listener', as: :report_abuse_listener
-  get 'users/report_abuse_user' => 'users#report_abuse_user', as: :report_abuse_user
+  get 'users/feedback' =>'users#feedback', as: :feedback_user
+  get 'users/report_abuse' =>'users#report_abuse', as: :report_abuse
 
   resources :users do
     member do

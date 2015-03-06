@@ -12,7 +12,7 @@
         - if current_user.listener
           .row.buttons
             %a.btn.btn-primary.btn{:href => ready_user_path(current_user), :role => "button", :"data-method" => :put} anyone who is online now
-            %a.btn.btn-primary.btn{:href => user_path(current_user), :role => "button"} someone with a particular subject in mind
+            %a.btn.btn-primary.btn{:href => user_path(current_user), :role => "button"} someone with a particular subject in mind  
         - else 
           .row.buttons
             %a.btn.btn-primary.btn{:href => user_path(current_user), :role => "button"} Become a listener now    

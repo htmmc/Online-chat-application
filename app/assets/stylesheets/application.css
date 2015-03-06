@@ -6855,8 +6855,9 @@ a.list-group-item-danger.active:focus {
 .jumbotron.main_text{
   margin: 20px;
   position:relative;
-  top:40%;
+  top:30%;
 }
+
 .jumbotron h1 {
   margin-top:20px;
   margin-bottom: 20px;
@@ -6886,6 +6887,8 @@ a.list-group-item-danger.active:focus {
 .text_list{
   width:90%;
   text-align: left;
+  padding-left:20px;
+  padding-right:20px;
 }
 #page1,
 #page2,
@@ -6938,6 +6941,13 @@ footer {
   text-align: center;
   margin: auto;
   width:80%;
+}
+.session_select.page2{
+  padding:10px;
+  background-color: rgba(32, 45, 63, 0.4);
+}
+.session_select.page2 a:hover{
+  text-decoration: none;
 }
 .devise_form_body{
   width:40%;
@@ -7047,4 +7057,15 @@ video#localVideo{
   margin:5px auto;
   padding-right:50px;
   padding-left:50px;
+}
+.page_top_row_two h3{
+  text-align: center;
+  padding:10px;
+}
+img.media-object{
+  width:64px;
+  height:64px;
+}
+.row.index_button{
+  text-align: center;
 }
