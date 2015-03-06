@@ -31,11 +31,11 @@
               %a{:href => "mission_statement"} Mission Statement
         -if current_user.present?
           %li
-            %a{:href =>"users/#{current_user.id}"} Logged in as: #{current_user.username}
+            %a{:href => user_path(current_user)} Logged in as: #{current_user.username}
           %li
-            %a{:href => "users/#{current_user.id}"} Dashboard
+            %a{:href => user_path(current_user)} Dashboard
           %li
-            %a{:href => "users/chat_session/#{current_user.id}"} Talk Now
+            %a{:href => chat_session_path(current_user)} Talk Now
           %li
             %a{:href => destroy_user_session_path, :"data-method" => :delete} Sign out
         - else 

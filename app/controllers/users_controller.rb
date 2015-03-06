@@ -67,10 +67,8 @@ class UsersController < ApplicationController
   	end 
 
   	def feedback
-  		
   	end 
   	def report_abuse
-  		
   	end 
  
 
