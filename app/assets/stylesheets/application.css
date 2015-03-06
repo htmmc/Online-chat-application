@@ -7044,20 +7044,6 @@ textarea.edit_profile{
   width:60%;
   text-align: center;
 }
-meter.volume.row{
-  width:50%;
-  position:center;
-  margin:5px auto;
-  z-index: 1;
-} 
-video#localVideo{
-  margin:30px 30px 10px 30px;
-}
-.videoContainer{
-  margin:5px auto;
-  padding-right:50px;
-  padding-left:50px;
-}
 .page_top_row_two h3{
   text-align: center;
   padding:10px;
@@ -7068,4 +7054,29 @@ img.media-object{
 }
 .row.index_button{
   text-align: center;
+}
+.videoContainer {
+    position: relative;
+    width: 200px;
+    height: 150px;
+}
+.videoContainer video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.volume {
+    position: absolute;
+    left: 15%;
+    width: 70%;
+    bottom: 5px;
+    height: 5px;
+    display: none;
+}
+.connectionstate {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    text-align: center;
+    color: #fff
 }

@@ -10,9 +10,10 @@
     %video#localVideo{:oncontextmenu => "return false;"}
     %meter#localVolume.volume.row{:high => "-25", :low => "-40", :max => "-20", :min => "-45"}
   #localContainer.videoContainer
-    #remotesVideos
+    #remotes
     %script{:src => "//simplewebrtc.com/latest.js"}  
-
+  .row.chat_session_buttons
+  -if 
   %a.btn.btn-primary.btn-sm{:href => busy_user_path(current_user), :"data-method" => "put", :role => "button"} Report Abuse
   %a.btn.btn-primary.btn-sm{:href => busy_user_path(current_user), :"data-method" => "put", :role => "button"} End Session 
   = link_to "Cancel this session", busy_user_path(current_user), :method =>"put"
