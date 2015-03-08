@@ -24,16 +24,16 @@
           = f.radio_button :listener, false, :class =>'edit_profile_radio'
         .edit_profile_form_item
           = f.label :language , :class =>'col-xs-3 edit_profile'
-          = f.text_field :language, required: true, :class =>'edit_profile'
+          = f.select :language, ['English', 'Spanish', 'Chinese', 'French'], selected: f.object.language, :required => true
         .edit_profile_form_item
           = f.label :agegroup , :class =>'col-xs-3 edit_profile'
-          = f.text_field :agegroup , :class =>'edit_profile'
+          = f.select :agegroup, ['teen', 'adult'], selected: f.object.agegroup, :required => true
         .edit_profile_form_item
           = f.label :categories, :class =>'col-xs-3 edit_profile'
-          = f.text_field :categories, :class =>'edit_profile'
+          = f.select :categories, ['Anxiety', 'Blah - Everyday matters','Business', 'Depression', 'Disability','Eating Disorders','Emotional support', 'Family Issues', 'Feeling Lost','Health and Wellness','LGBTQ','Life in general','Panic Attacks','Relationships','Sex','Self-Harm', 'Substance Abuse', 'Traumatic Experiences', 'Work Stress'], :required => true, selected: f.object.categories
         .edit_profile_form_item 
           = f.label :religion , :class =>'col-xs-3 edit_profile'
-          = f.text_field :religion, :class =>'edit_profile'
+          = f.select :religion, ['Catholicism','Protestantism','Islam','Judaism','Hinduism','Buddhism','prefer not to answer','Spiritualism','Atheism','none'], :required => true, selected: f.object.religion
         .edit_profile_form_item  
           = f.label :license_type , :class =>'col-xs-3 edit_profile'
           = f.text_field :license_type, :class =>'edit_profile'
