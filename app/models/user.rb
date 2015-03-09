@@ -15,7 +15,12 @@ class User < ActiveRecord::Base
 
     #def old_enough
 #      errors.add(:birthday, "must be older than 18") if birthday.to_date < 18.years.ago 
-#    end 
+#    end  
+# in a process of adding search function
+#    def self.search(search)
+#      search_condition = "%" + search + "%"
+#      find(:all, :conditions => ['description of listener: ?', search_condition, search_condition])
+#    end
   protected
     #Test to see if this will skip the confirmation process for now
     def skip_confirmation!
